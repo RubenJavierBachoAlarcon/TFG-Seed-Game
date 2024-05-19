@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 3a777202d4746e148bf9efb53c8e07b7
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: a54b2420b0f04ef44be6085f7b3f2130
+  - enabled: 0
+    path: Assets/Scenes/Escena Alex Antigua.unity
+    guid: 854d475ab988e054bbbb2e866464b0e4
+  - enabled: 0
+    path: Assets/Scenes/Escena Antonio.unity
+    guid: 5294c23ad8109cf489efbe8faf6b216b
+  - enabled: 1
+    path: Assets/Scenes/Nivel Final.unity
+    guid: cdabba44ef6ea86479719fe694de71ad
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 019a7397aa3748d45aac0b9b00ee06b7
+  - enabled: 1
+    path: Assets/Scenes/Seleccion Niveles.unity
+    guid: 2a36d107e0f2a9f4b8819931f69faf44
+  - enabled: 1
+    path: Assets/Scenes/Cutscene Final.unity
+    guid: 99c5c08c1259e374bbc9f57a2a02f187
+  - enabled: 0
+    path: Assets/Scenes/Escena Alex.unity
+    guid: deb6419cba127964a8dedc72de8b25ce
+  - enabled: 1
+    path: Assets/Scenes/Nivel 1 - Cuevas.unity
+    guid: 418ed9435d6c8ff41a76c84968e02dd9
+  - enabled: 1
+    path: "Assets/Scenes/Nivel 1 - Monta\xF1a.unity"
+    guid: af4383c066ef71449a028cbeef8cb6af
+  - enabled: 1
+    path: Assets/Scenes/Nivel 2 - Bosque.unity
+    guid: 636d65da7b5a2684294777d418933a6d
+  - enabled: 1
+    path: Assets/Scenes/Nivel 2 - Cuevas.unity
+    guid: fbcb188d9aafe1e418b176744866f57f
+  - enabled: 1
+    path: Assets/Scenes/Nivel 3 - Cuevas.unity
+    guid: 903a1e422c7fa8649a78928759a57eab
+  - enabled: 1
+    path: Assets/Scenes/Nivel 1 - Bosque.unity
+    guid: 006084d586ea9cc42a457fb6d2f19d3e
+  - enabled: 1
+    path: "Assets/Scenes/Nivel 2 - Monta\xF1a.unity"
+    guid: 8e9821f712c481e4aa8abd90e96e837c
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5d9ecd2929d9ba84d8255338381a4361, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 2bad92b28cd778f48bd7a579cd8a0596, type: 2}

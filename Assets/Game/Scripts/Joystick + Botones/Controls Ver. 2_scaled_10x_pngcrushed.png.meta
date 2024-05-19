@@ -1,0 +1,523 @@
+fileFormatVersion: 2
+guid: 0438bfc10b8344147ade859d5a05e437
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8620f2070ff98e4394a96b4d1831fe5
+      internalID: -1439694537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 480
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae2dc2c092661a4fb0889d0ec1aa0ee
+      internalID: -1811770336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_2
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 500
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb523744c44290047b9166d5bccf1123
+      internalID: 1876915994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_3
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 500
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16100444fc7fcc4c9f330a4cc703c4d
+      internalID: -1571250286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_4
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 390
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b95e4f3f7133fe46ba7ff64e0144e9d
+      internalID: 646020712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_5
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 500
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56aaaaae7f0ec3743ad17443f0ac2b1b
+      internalID: -797397930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_6
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 350
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae9f2c9e69011bd48a05ec938f17fe7c
+      internalID: -799743452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_7
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 350
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f2716b7d172904486790b23b79bf80
+      internalID: 850898554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_8
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 180
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49d817503da5c348b9327a22676a83d
+      internalID: -1513436037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_9
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 180
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbea148b78e63b41acbe5560a5f72f2
+      internalID: -232144643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_10
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 70
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a8e8dc75360ee44ba0eac6a236c252
+      internalID: 1688117271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_11
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 180
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b8250ebd2ea5e4caa9f902f131a0fb
+      internalID: -2044598855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_12
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 230
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ca7ea89e9d44249b0fd4eb6c7738cf
+      internalID: 73287109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_13
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 230
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a697f9fe0bee8a747981ca3b83d11ad2
+      internalID: -153171039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_14
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 30
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c7dea2859105448b2edfc92f0622a3
+      internalID: 1699436141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_15
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 30
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b05bea265f647f4e960c27bed3271f1
+      internalID: 1566545385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 130
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1823d6fa974644498be99820c9d27e4
+      internalID: 453362285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Ver. 2_scaled_10x_pngcrushed_17
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 130
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cc1314c78d4ae45853e58940cd8494
+      internalID: -851591453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Controls Ver. 2_scaled_10x_pngcrushed_0: -1439694537
+      Controls Ver. 2_scaled_10x_pngcrushed_1: -1811770336
+      Controls Ver. 2_scaled_10x_pngcrushed_10: 1688117271
+      Controls Ver. 2_scaled_10x_pngcrushed_11: -2044598855
+      Controls Ver. 2_scaled_10x_pngcrushed_12: 73287109
+      Controls Ver. 2_scaled_10x_pngcrushed_13: -153171039
+      Controls Ver. 2_scaled_10x_pngcrushed_14: 1699436141
+      Controls Ver. 2_scaled_10x_pngcrushed_15: 1566545385
+      Controls Ver. 2_scaled_10x_pngcrushed_16: 453362285
+      Controls Ver. 2_scaled_10x_pngcrushed_17: -851591453
+      Controls Ver. 2_scaled_10x_pngcrushed_2: 1876915994
+      Controls Ver. 2_scaled_10x_pngcrushed_3: -1571250286
+      Controls Ver. 2_scaled_10x_pngcrushed_4: 646020712
+      Controls Ver. 2_scaled_10x_pngcrushed_5: -797397930
+      Controls Ver. 2_scaled_10x_pngcrushed_6: -799743452
+      Controls Ver. 2_scaled_10x_pngcrushed_7: 850898554
+      Controls Ver. 2_scaled_10x_pngcrushed_8: -1513436037
+      Controls Ver. 2_scaled_10x_pngcrushed_9: -232144643
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Suelo
+  - Enemy
+  - PowerUp
+  - GeM
+  - GeMBad
+  - CheckPoint
+  - Pinchos
+  - MensajeTutorial
+  - windActiveCollider
+  - Boss
+  - GemBoss
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Jugador
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: PlayerSL
+    uniqueID: 3074548255
+    locked: 0
+  - name: SueloSL
+    uniqueID: 262238175
+    locked: 0
+  - name: FondoEnsuelo
+    uniqueID: 2492941903
+    locked: 0
+  - name: DecoSuperiorSL
+    uniqueID: 1975074465
+    locked: 0
+  - name: Arbol Tangible
+    uniqueID: 2587054381
+    locked: 0
