@@ -239,6 +239,7 @@ MonoBehaviour:
   Jugador: {fileID: 0}
   dashColor: {r: 1, g: 0, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
+  empoweredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   isUsingKeyboard: 0
 --- !u!81 &684714431050893371
 AudioListener:
@@ -260,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3fb7c1b85fe6f42abbc9eccf7bfa0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 0}
   reboundForce: 10
   respawnPoint: {x: 0, y: 0}
   respawnDelay: 1
@@ -350,7 +352,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.619
   m_Color: {r: 1, g: 0.7877358, b: 0.7877358, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 000000001fe241b7df6fa10fa13eb975
@@ -372,7 +374,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 5.2575974
+  m_PointLightOuterRadius: 6
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

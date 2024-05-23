@@ -1,74 +1,86 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class TutorialTrigger : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI tutorialText;
-    [SerializeField] public bool isPrimerTuto;
-    private bool Retardo = true;
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] public float fadeDuration = 1f; // Duración del fade in y fade out
+    public PlayerMovement playerMovement;
+    private float movementThreshold = 0.1f;
+    private bool actionCompleted = false;
+    private float actionTimer = 0f;
+    private float actionDuration = 2f; // Duración de la acción en segundos
+    private string[] strings = new string[] { "Movimiento", "Salto", "Disparo", "Recarga", "Recoger", "Cambio de arma" };
+
+    public void startText()
     {
-        if (collision.CompareTag("Player"))
+        tutorialText.text = strings[0];
+        StartCoroutine(FadeTextIn());
+    }
+
+    private void Update()
+    {
+        if (tutorialText.text == strings[0])
         {
-            if (isPrimerTuto && Retardo)
-            {
-                StartCoroutine(EsperarYContinuar(collision));
-            }
-            else
-            {
-                ProcesarEntrada(collision);
-            }
+            CheckMovementCondition();
+        }
+        else if (tutorialText.text == strings[1])
+        {
+            CheckJumpCondition();
         }
     }
 
-    private IEnumerator EsperarYContinuar(Collider2D collision)
+    private void CheckMovementCondition()
     {
-        yield return new WaitForSeconds(4); // Espera 3 segundos.
-        Retardo = false; // Después de esperar, establece Retardo a false para que no se aplique de nuevo.
-        ProcesarEntrada(collision); // Continúa con el procesamiento.
-    }
-
-    private void ProcesarEntrada(Collider2D collision)
-    {
-        string message = GetMessageBasedOnTriggerName(gameObject.name); // Obtiene el mensaje.
-        tutorialText.text = message; // Establece el mensaje.
-        CancelInvoke("HideText");
-        Invoke("HideText", 30f); // Oculta el mensaje después de 30 segundos.
-    }
-
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        if (!actionCompleted && playerMovement.RB.velocity.magnitude > movementThreshold)
         {
-            HideText();
+            actionTimer += Time.deltaTime;
+            if (actionTimer >= actionDuration)
+            {
+                actionCompleted = true;
+                StartCoroutine(FadeTextOut());
+            }
+        }
+        else
+        {
+            actionTimer = 0f; // Reset the timer if the player stops moving
         }
     }
 
-    private void HideText()
+    private void CheckJumpCondition()
     {
-        tutorialText.text = ""; // Limpia el texto
+        if (!actionCompleted && playerMovement.IsJumping)
+        {
+            actionCompleted = true;
+            StartCoroutine(FadeTextOut());
+        }
     }
 
-    // Esta función decide qué mensaje mostrar basado en el nombre del trigger
-    private string GetMessageBasedOnTriggerName(string triggerName)
+    private IEnumerator FadeTextOut()
     {
-        switch (triggerName)
+        float elapsedTime = 0f;
+        Color color = tutorialText.color;
+        while (elapsedTime < fadeDuration)
         {
-            case "msg1":
-                return "Bienvenido a The Seed´s Odyssey, prueba a moverte con el joystick!";
-            case "msg2":
-                return "Prueba a Saltar pulsando el boton 'A'! ";
-            case "msg3":
-                return "Puedes saltar en las paredes para impulsarte a la otra pared!";
-            case "msg4":
-                return "Cuidado con este enemigo! Pulsando el boton 'B' te deslizaras, que puede serte muy util!";
-            case "msg5":
-                return "Una Valiosa gema! si la consigues mientras deslizas, podras deslizar de nuevo!";
-            default:
-                return "Mensaje no definido para este área.";
+            elapsedTime += Time.deltaTime;
+            color.a = 1f - Mathf.Clamp01(elapsedTime / fadeDuration);
+            tutorialText.color = color;
+            yield return null;
+        }
+        tutorialText.text = "";
+    }
+
+    private IEnumerator FadeTextIn()
+    {
+        float elapsedTime = 0f;
+        Color color = tutorialText.color;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsedTime / fadeDuration);
+            tutorialText.color = color;
+            yield return null;
         }
     }
 }

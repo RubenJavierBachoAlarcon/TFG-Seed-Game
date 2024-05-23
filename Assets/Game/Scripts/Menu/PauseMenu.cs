@@ -75,6 +75,11 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
     }
 
+    public void resumeTimer()
+    {
+        isPaused = false;
+    }
+
     public string GetTimerText()
     {
         return timerText.text;
