@@ -10,8 +10,15 @@ public class TutorialTrigger : MonoBehaviour
     private float movementThreshold = 0.1f;
     private bool actionCompleted = false;
     private float actionTimer = 0f;
-    private float actionDuration = 2f; // Duración de la acción en segundos
-    private string[] strings = new string[] { "Movimiento", "Salto", "Disparo", "Recarga", "Recoger", "Cambio de arma" };
+    public float movementActionDuration = 1f; // Duración de la acción en segundos
+    private string[] strings = new string[]
+    {
+        "Usa WASD para moverte",
+        "Presiona Espacio para saltar",
+        "Cuando estés contra una pared, usa Espacio para realizar un salto de pared",
+        "Presiona Shift para realizar un desplazamiento rápido"
+    };
+    private int currentTutorialIndex = 0;
 
     public void startText()
     {
@@ -21,13 +28,20 @@ public class TutorialTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (tutorialText.text == strings[0])
+        switch (currentTutorialIndex)
         {
-            CheckMovementCondition();
-        }
-        else if (tutorialText.text == strings[1])
-        {
-            CheckJumpCondition();
+            case 0:
+                CheckMovementCondition();
+                break;
+            case 1:
+                CheckJumpCondition();
+                break;
+            case 2:
+                CheckWallJumpCondition();
+                break;
+            case 3:
+                CheckDashCondition();
+                break;
         }
     }
 
@@ -36,7 +50,7 @@ public class TutorialTrigger : MonoBehaviour
         if (!actionCompleted && playerMovement.RB.velocity.magnitude > movementThreshold)
         {
             actionTimer += Time.deltaTime;
-            if (actionTimer >= actionDuration)
+            if (actionTimer >= movementActionDuration)
             {
                 actionCompleted = true;
                 StartCoroutine(FadeTextOut());
@@ -44,7 +58,7 @@ public class TutorialTrigger : MonoBehaviour
         }
         else
         {
-            actionTimer = 0f; // Reset the timer if the player stops moving
+            actionTimer = 0f;
         }
     }
 
@@ -54,6 +68,37 @@ public class TutorialTrigger : MonoBehaviour
         {
             actionCompleted = true;
             StartCoroutine(FadeTextOut());
+        }
+    }
+
+    private void CheckWallJumpCondition()
+    {
+        if (!actionCompleted && playerMovement.IsWallJumping)
+        {
+            actionCompleted = true;
+            StartCoroutine(FadeTextOut());
+        }
+    }
+
+    private void CheckDashCondition()
+    {
+        if (!actionCompleted && PlayerMovement.IsDashing)
+        {
+            actionCompleted = true;
+            StartCoroutine(FadeTextOut());
+        }
+    }
+
+    private IEnumerator FadeTextIn()
+    {
+        float elapsedTime = 0f;
+        Color color = tutorialText.color;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsedTime / fadeDuration);
+            tutorialText.color = color;
+            yield return null;
         }
     }
 
@@ -68,19 +113,16 @@ public class TutorialTrigger : MonoBehaviour
             tutorialText.color = color;
             yield return null;
         }
-        tutorialText.text = "";
-    }
-
-    private IEnumerator FadeTextIn()
-    {
-        float elapsedTime = 0f;
-        Color color = tutorialText.color;
-        while (elapsedTime < fadeDuration)
+        actionCompleted = false;
+        currentTutorialIndex++;
+        if (currentTutorialIndex < strings.Length)
         {
-            elapsedTime += Time.deltaTime;
-            color.a = Mathf.Clamp01(elapsedTime / fadeDuration);
-            tutorialText.color = color;
-            yield return null;
+            tutorialText.text = strings[currentTutorialIndex];
+            StartCoroutine(FadeTextIn());
+        }
+        else
+        {
+            tutorialText.text = "";
         }
     }
 }

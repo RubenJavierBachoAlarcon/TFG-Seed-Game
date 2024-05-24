@@ -21,13 +21,15 @@ public class Boss_Movements : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        attackTimer += Time.deltaTime;
-        if (attackTimer >= attackDelay)
+        if (!AnimacionInicioNiveles.isPlaying)
         {
-            attackTimer = 0f;
-            ChooseAtack(animator);
+            attackTimer += Time.deltaTime;
+            if (attackTimer >= attackDelay)
+            {
+                attackTimer = 0f;
+                ChooseAtack(animator);
+            }
         }
-
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

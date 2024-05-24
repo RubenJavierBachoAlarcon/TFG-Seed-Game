@@ -84,8 +84,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
 
-    public CinemachineVirtualCamera virtualCamera;
-
     public Light2D luzPersonaje;
 
     public bool forceMoveRight = false;
@@ -585,13 +583,11 @@ public class PlayerMovement : MonoBehaviour
         if (isDying)
         {
             luzPersonaje.enabled = false;
-            virtualCamera.enabled = false;
             return;
         }
         else
         {
             luzPersonaje.enabled = true;
-            virtualCamera.enabled = true;
         }
 
         //Handle Run
