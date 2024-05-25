@@ -121,11 +121,9 @@ public class ColisionEnemigo : MonoBehaviour
 
         if (collision.gameObject.CompareTag("CheckPoint"))
         {
-            Debug.Log("CheckPoint");
             // Actualiza la posición del checkPoint para que sea la posición del "CheckPoint"
             checkPoint = collision.transform.position;
             //Checkpoint debug pos
-            Debug.Log(checkPoint);
         }
     }
 

@@ -62,6 +62,7 @@ public class ChangeScene : MonoBehaviour
     {
         float finalTime = pauseMenu.GetGameTime();
         finalScore = (int)(100000 / finalTime); // Aumenta el numerador para obtener una puntuación más alta
+        Debug.Log("Final Score: " + finalScore);
         int currentScore = 0;
 
         SaveScoreToPlayerPrefs();
@@ -90,33 +91,34 @@ public class ChangeScene : MonoBehaviour
 
     void SaveScoreToPlayerPrefs()
     {
-        if (nivelActual == "Nivel1")
+        // Get the stored scores
+        int storedScore1 = PlayerPrefs.GetInt(nivelActual + " - 1", 0);
+        int storedScore2 = PlayerPrefs.GetInt(nivelActual + " - 2", 0);
+        int storedScore3 = PlayerPrefs.GetInt(nivelActual + " - 3", 0);
+
+        // If the current score is higher than any of the stored scores, store the current score
+        if (finalScore > storedScore1)
         {
-            PlayerPrefs.SetInt("ScoreNivel1", finalScore);
-            Debug.Log("ScoreNivel1: " + PlayerPrefs.GetInt("ScoreNivel1"));
+            // Shift the old scores down
+            PlayerPrefs.SetInt(nivelActual + " - 3", storedScore2);
+            PlayerPrefs.SetInt(nivelActual + " - 2", storedScore1);
+            PlayerPrefs.SetInt(nivelActual + " - 1", finalScore);
         }
-        else if (nivelActual == "Nivel2")
+        else if (finalScore > storedScore2)
         {
-            PlayerPrefs.SetInt("ScoreNivel2", finalScore);
-            Debug.Log("ScoreNivel2: " + PlayerPrefs.GetInt("ScoreNivel2"));
+            PlayerPrefs.SetInt(nivelActual + " - 3", storedScore2);
+            PlayerPrefs.SetInt(nivelActual + " - 2", finalScore);
         }
-        else if (nivelActual == "Nivel3")
+        else if (finalScore > storedScore3)
         {
-            PlayerPrefs.SetInt("ScoreNivel3", finalScore);
-            Debug.Log("ScoreNivel3: " + PlayerPrefs.GetInt("ScoreNivel3"));
+            PlayerPrefs.SetInt(nivelActual + " - 3", finalScore);
         }
-        else if (nivelActual == "Nivel4")
-        {
-            PlayerPrefs.SetInt("ScoreNivel4", finalScore);
-            Debug.Log("ScoreNivel4: " + PlayerPrefs.GetInt("ScoreNivel4"));
-        }
+
+        Debug.Log("Score 1: " + PlayerPrefs.GetInt(nivelActual + " - 1"));
+        Debug.Log("Score 2: " + PlayerPrefs.GetInt(nivelActual + " - 2"));
+        Debug.Log("Score 3: " + PlayerPrefs.GetInt(nivelActual + " - 3"));
 
         PlayerPrefs.Save();
     }
 
-    public int GetSomeVariable()
-    {
-        // Retorna la variable que deseas acceder
-        return finalScore;
-    }
 }

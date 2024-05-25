@@ -37,7 +37,7 @@ public class FinalJuego : MonoBehaviour
     IEnumerator ActivateGameOverPanel()
     {
         Debug.Log("ActivateGameOverPanel started"); // Agrega esta línea
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(15);
         StartCoroutine(UpdateFinalScore());
         panelNegro.SetActive(true);
         Time.timeScale = 0;

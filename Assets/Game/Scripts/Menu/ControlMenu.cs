@@ -14,6 +14,7 @@ public class ControlMenu : MonoBehaviour
 
     [SerializeField] public GameObject PanelNegro;
     [SerializeField] public GameObject PanelHighScore;
+    [SerializeField] public GameObject PanelSeleccionNivel;
     [SerializeField] public GameObject btnHighScore;
 
     [SerializeField] private TextMeshProUGUI highScore1;
@@ -24,9 +25,19 @@ public class ControlMenu : MonoBehaviour
     
     void Start()
     {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
-        Debug.Log("Se han borrado los datos");
+        //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.Save();
+        //Debug.Log("Se han borrado los datos");
+    }
+
+    public void onButtonNivel(string nivel)
+    {
+        highScore1.text = "1. " + PlayerPrefs.GetInt(nivel + " - 1", 0).ToString() + " Puntos";
+        highScore2.text = "2. " + PlayerPrefs.GetInt(nivel + " - 2", 0).ToString() + " Puntos";
+        highScore3.text = "3. " + PlayerPrefs.GetInt(nivel + " - 3", 0).ToString() + " Puntos";
+
+        PanelHighScore.SetActive(true);
+        PanelSeleccionNivel.SetActive(false);
     }
 
 
@@ -56,13 +67,15 @@ public class ControlMenu : MonoBehaviour
 
         btnHighScore.SetActive(false);
         PanelNegro.SetActive(true);
-        PanelHighScore.SetActive(true);
+        PanelSeleccionNivel.SetActive(true);
+
     }
     public void onButtonCerrarHighScore()
     {
         btnHighScore.SetActive(true);
         PanelNegro.SetActive(false);
         PanelHighScore.SetActive(false);
+        PanelSeleccionNivel.SetActive(false);
     }
 
 
