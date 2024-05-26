@@ -62,7 +62,7 @@ public class FinalJuego : MonoBehaviour
     {
         Debug.Log("UpdateFinalScore started"); // Agrega esta línea
         // Suma las puntuaciones de los 4 niveles
-        finalScore = PlayerPrefs.GetInt("ScoreNivel1") + PlayerPrefs.GetInt("ScoreNivel2") + PlayerPrefs.GetInt("ScoreNivel3") + PlayerPrefs.GetInt("ScoreNivel4");
+        finalScore = PlayerPrefs.GetInt("Nivel 2 - Montaña");
         int currentScore = 0;
 
         UpdateHighScores(finalScore);

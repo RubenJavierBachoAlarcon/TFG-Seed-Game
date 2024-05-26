@@ -11,6 +11,9 @@ public class SeleccionNiveles : MonoBehaviour
     [SerializeField] public Button btnNivel2;
     [SerializeField] public Button btnNivel3;
     [SerializeField] public Button btnNivel4;
+    [SerializeField] public Button btnNivel5;
+    [SerializeField] public Button btnNivel6;
+    [SerializeField] public Button btnNivel7;
 
     private MusicScript musicScript;
 
@@ -18,45 +21,42 @@ public class SeleccionNiveles : MonoBehaviour
     {
         musicScript = FindObjectOfType<MusicScript>();
 
-        // Si el nivel 1 no está completado, deshabilita los botones de los niveles 3 y 4
-        if (PlayerPrefs.GetInt("Nivel1") != 1)
+        if (PlayerPrefs.GetInt("Nivel 1 - Cuevas") == 1)
         {
-            btnNivel2.interactable = false;
-            btnNivel3.interactable = false;
-            btnNivel4.interactable = false;
-        }
-        // Si el nivel 2 no está completado, deshabilita los botones de los niveles 3 y 4
-        else if (PlayerPrefs.GetInt("Nivel2") != 1)
-        {
-            btnNivel3.interactable = false;
-            btnNivel4.interactable = false;
-        }
-        // Si el nivel 3 no está completado, deshabilita el botón del nivel 4
-        else if (PlayerPrefs.GetInt("Nivel3") != 1)
-        {
-            btnNivel4.interactable = false;
-        }
-
-
-
-        if (PlayerPrefs.GetInt("Nivel1") == 1)
-        {
+            btnNivel2.interactable = true;
             btnNivel1.GetComponent<Image>().color = Color.green;
         }
-        if (PlayerPrefs.GetInt("Nivel2") == 1)
+        if (PlayerPrefs.GetInt("Nivel 2 - Cuevas") == 1)
         {
+            btnNivel3.interactable = true;
             btnNivel2.GetComponent<Image>().color = Color.green;
         }
-        if (PlayerPrefs.GetInt("Nivel3") == 1)
+        if (PlayerPrefs.GetInt("Nivel 3 - Cuevas") == 1)
         {
+            btnNivel4.interactable = true;
             btnNivel3.GetComponent<Image>().color = Color.green;
         }
-        if (PlayerPrefs.GetInt("Nivel4") == 1)
+        if (PlayerPrefs.GetInt("Nivel 1 - Bosque") == 1)
         {
+            btnNivel5.interactable = true;
             btnNivel4.GetComponent<Image>().color = Color.green;
         }
-
+        if (PlayerPrefs.GetInt("Nivel 2 - Bosque") == 1)
+        {
+            btnNivel6.interactable = true;
+            btnNivel5.GetComponent<Image>().color = Color.green;
+        }
+        if (PlayerPrefs.GetInt("Nivel 1 - Montaña") == 1)
+        {
+            btnNivel7.interactable = true;
+            btnNivel6.GetComponent<Image>().color = Color.green;
+        }
+        if (PlayerPrefs.GetInt("Nivel 2 - Montaña") == 1)
+        {
+            btnNivel7.GetComponent<Image>().color = Color.green;
+        }
     }
+
 
     public void Nivel1()
     {
