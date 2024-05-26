@@ -12,10 +12,9 @@ public class End_Boss_Battle : MonoBehaviour
     {
         pauseMenu.pauseTimer();
         PlayerPrefs.SetInt("Nivel 2 - Montaña", (int)(100000 / pauseMenu.GetGameTime()));
-        
     }
     void cutSceneFinal()
     {
-        FadeManager.Instance.FadeToScene("Cutscene Final");
+        FadeManager.Instance.FadeToScene("Cutscene Final", 5);
     }
 }

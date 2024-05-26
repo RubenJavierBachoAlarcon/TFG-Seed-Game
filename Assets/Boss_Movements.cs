@@ -42,7 +42,7 @@ public class Boss_Movements : StateMachineBehaviour
         int atack = 0;
         if (PlayerMovement.isEmpowered)
         {
-            atack = Random.Range(0, 4);
+            atack = Random.Range(0, 3);
         }
         else
         {
@@ -58,7 +58,6 @@ public class Boss_Movements : StateMachineBehaviour
                 animator.SetTrigger("ArmLaunch");
                 break;
             case 2:
-            case 3:
                 animator.SetTrigger("Inmune");
                 break;
         }

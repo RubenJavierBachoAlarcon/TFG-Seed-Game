@@ -47,7 +47,10 @@ public class CameraManager : MonoBehaviour
     {
         foreach (var camera in cameras)
         {
-            camera.gameObject.SetActive(false);
+            if (camera != null)
+            {
+                camera.gameObject.SetActive(false);
+            }
         }
     }
 }

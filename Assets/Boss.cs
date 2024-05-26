@@ -17,6 +17,8 @@ public class Boss : MonoBehaviour
 
     public GameObject[] gemMaps;
 
+    public MusicScriptLevel musicScriptLevel;
+
     void Start()
     {
         laserAnimator = laserObject.GetComponent<Animator>();
@@ -67,6 +69,7 @@ public class Boss : MonoBehaviour
                 break;
             case 0:
                 animator.SetTrigger("Die");
+                musicScriptLevel.EndAudio();
                 GetComponent<BoxCollider2D>().enabled = false;
                 gemMaps[5].SetActive(false);
                 break;

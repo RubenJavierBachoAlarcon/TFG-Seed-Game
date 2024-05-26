@@ -81,4 +81,37 @@ public class FadeManager : MonoBehaviour
             }
         }
     }
+
+    public void FadeToScene(string sceneName, float fadeDuration)
+    {
+        StartCoroutine(FadeOutAndLoadScene(sceneName, fadeDuration));
+    }
+
+    private IEnumerator FadeOutAndLoadScene(string sceneName, float fadeDuration)
+    {
+        // Activa el componente de imagen
+        if (blackOverlay != null)
+        {
+            blackOverlay.enabled = true;
+
+            // Inicia el fundido a negro
+            for (float t = 0; t <= fadeDuration; t += Time.deltaTime)
+            {
+                if (blackOverlay != null)
+                {
+                    blackOverlay.color = new Color(0, 0, 0, t / fadeDuration);
+                }
+                yield return null;
+            }
+
+            // Carga la escena
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+            // Wait until the scene is fully loaded
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+        }
+    }
+
 }

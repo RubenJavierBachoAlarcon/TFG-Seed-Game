@@ -12,8 +12,12 @@ public class SeleccionNiveles : MonoBehaviour
     [SerializeField] public Button btnNivel3;
     [SerializeField] public Button btnNivel4;
 
+    private MusicScript musicScript;
+
     void Start()
     {
+        musicScript = FindObjectOfType<MusicScript>();
+
         // Si el nivel 1 no está completado, deshabilita los botones de los niveles 3 y 4
         if (PlayerPrefs.GetInt("Nivel1") != 1)
         {
@@ -57,36 +61,43 @@ public class SeleccionNiveles : MonoBehaviour
     public void Nivel1()
     {
         FadeManager.Instance.FadeToScene("Nivel 1 - Cuevas");
+        musicScript.StartFade();
     }
 
     public void Nivel2()
     {
         FadeManager.Instance.FadeToScene("Nivel 2 - Cuevas");
+        musicScript.StartFade();
     }
 
     public void Nivel3()
     {
         FadeManager.Instance.FadeToScene("Nivel 3 - Cuevas");
+        musicScript.StartFade();
     }
 
     public void Nivel4()
     {
         FadeManager.Instance.FadeToScene("Nivel 1 - Bosque");
+        musicScript.StartFade();
     }
 
     public void Nivel5()
     {
         FadeManager.Instance.FadeToScene("Nivel 2 - Bosque");
+        musicScript.StartFade();
     }
 
     public void Nivel6()
     {
         FadeManager.Instance.FadeToScene("Nivel 1 - Montaña");
+        musicScript.StartFade();
     }
 
     public void Nivel7()
     {
         FadeManager.Instance.FadeToScene("Nivel 2 - Montaña");
+        musicScript.StartFade();
     }
 
     public void Menu()
