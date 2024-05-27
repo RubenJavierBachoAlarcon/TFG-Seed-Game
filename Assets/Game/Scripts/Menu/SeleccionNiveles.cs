@@ -20,6 +20,11 @@ public class SeleccionNiveles : MonoBehaviour
     void Start()
     {
         musicScript = FindObjectOfType<MusicScript>();
+        if (!musicScript.as1.isPlaying)
+        {
+            musicScript.as1.volume = 1f;
+            musicScript.as1.Play();
+        }
 
         if (PlayerPrefs.GetInt("Nivel 1 - Cuevas") == 1)
         {

@@ -59,6 +59,11 @@ public class ControlMenu : MonoBehaviour
     {
         FadeManager.Instance.FadeToScene("Menu");
     }
+
+    public void onButtonLogros()
+    {
+        FadeManager.Instance.FadeToScene("Logros");
+    }
     public void onButtonHighScore()
     {
         highScore1.text = "1. " + PlayerPrefs.GetInt("HighScore1").ToString() + " Puntos";

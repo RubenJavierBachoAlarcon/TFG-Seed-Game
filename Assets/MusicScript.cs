@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class MusicScript : MonoBehaviour
 {
+    public static MusicScript instance = null;
+
     public AudioSource as1, as2;
     public float fadeTime = 1f;
 
-    void Start()
+    void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void StartFade()

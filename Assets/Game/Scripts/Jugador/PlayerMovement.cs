@@ -431,31 +431,19 @@ public class PlayerMovement : MonoBehaviour
             Destroy(parentObject);
         }
 
-        if (collision.CompareTag("GeMBad"))
+        if (collision.CompareTag("GemaAmarilla"))
         {
-            ral = true;
-            AudioManager2.instance.PlayAudio();
-            collision.gameObject.SetActive(false);
-            // Obtén una referencia al objeto GameManager
-            GameObject gameManager = GameObject.Find("GameManager");
-            if (gameManager != null)
-            {
-                // Obtén una referencia al script PauseMenu
-                PauseMenu pauseMenu = gameManager.GetComponent<PauseMenu>();
-                if (pauseMenu != null)
-                {
-                    pauseMenu.sum10Seconds();
-                }
-                else
-                {
-                    Debug.LogError("No se ha encontrado el script PauseMenu en el GameManager.");
-                }
-            }
-            else
-            {
-                Debug.LogError("No se ha encontrado el objeto GameManager.");
-            }
+            GameObject parentObject = collision.gameObject.transform.parent.gameObject;
+            GemaAmarilla gema = parentObject.GetComponent<GemaAmarilla>();
+            int gemaId = gema.gemaId;
+            PlayerPrefs.SetInt("GemaAmarilla" + gemaId, 1);
+            Destroy(parentObject);
         }
+
+
+
+
+
 
         if (collision.CompareTag("CheckPoint"))
         {

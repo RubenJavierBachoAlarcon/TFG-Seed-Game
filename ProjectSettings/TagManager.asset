@@ -15,6 +15,7 @@ TagManager:
   - windActiveCollider
   - Boss
   - GemBoss
+  - GemaAmarilla
   layers:
   - Default
   - TransparentFX

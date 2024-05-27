@@ -14,6 +14,7 @@ public class MusicScriptLevel : MonoBehaviour
         if (loopClip != null)
         {
             loopClip.LoadAudioData();
+            endClip.LoadAudioData();
         }
         StartCoroutine(PlayLoopWhenIntroStops());
     }

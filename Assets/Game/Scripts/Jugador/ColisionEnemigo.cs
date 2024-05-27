@@ -169,11 +169,10 @@ public class ColisionEnemigo : MonoBehaviour
         animator.Play("Apareciendo");
         yield return new WaitForSeconds(0.6f);
 
-        // Verifica si el personaje está en contacto con el viento
         if (PlayerMovement.isWindUpActive)
         {
             // Si es así, reproduce la animación de caída
-            animator.Play("Cayendo");
+            animator.Play("CayendoDef");
         }
         else
         {
