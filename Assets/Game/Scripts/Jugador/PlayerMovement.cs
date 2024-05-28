@@ -433,6 +433,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.CompareTag("GemaAmarilla"))
         {
+            AudioManager.instance.PlayAudio();
             GameObject parentObject = collision.gameObject.transform.parent.gameObject;
             GemaAmarilla gema = parentObject.GetComponent<GemaAmarilla>();
             int gemaId = gema.gemaId;

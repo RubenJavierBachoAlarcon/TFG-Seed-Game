@@ -2366,6 +2366,8 @@ MonoBehaviour:
   - {fileID: 1267453481}
   - {fileID: 43326664}
   musicScriptLevel: {fileID: 1560612783}
+  spotlight: {fileID: 980340161}
+  spotlightCloseSpeed: 0.5
 --- !u!114 &726861511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6932,7 +6934,7 @@ AudioSource:
   m_GameObject: {fileID: 1560612782}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: fd09a2c3f0c91174899f34c0b538039a, type: 2}
   m_audioClip: {fileID: 8300000, guid: 87bcc456bdd5c504b94b8720cdf77941, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

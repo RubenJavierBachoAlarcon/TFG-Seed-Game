@@ -10,8 +10,11 @@ public class Boss_Movements : StateMachineBehaviour
 
     public GameObject armPrefab;
 
+    public static Animator BossAnimator;
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        BossAnimator = animator;
         if (animator.GetBool("isEnraged"))
         {
             attackDelay = 2;

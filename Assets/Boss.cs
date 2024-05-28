@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Rendering.Universal;
 
 public class Boss : MonoBehaviour
 {
@@ -18,6 +20,10 @@ public class Boss : MonoBehaviour
     public GameObject[] gemMaps;
 
     public MusicScriptLevel musicScriptLevel;
+
+    public Light2D spotlight; 
+    public float spotlightCloseSpeed = 1f;
+
 
     void Start()
     {
@@ -68,6 +74,7 @@ public class Boss : MonoBehaviour
                 gemMaps[4].SetActive(false);
                 break;
             case 0:
+                StartCoroutine(CloseSpotlight());
                 animator.SetTrigger("Die");
                 musicScriptLevel.EndAudio();
                 GetComponent<BoxCollider2D>().enabled = false;
@@ -87,6 +94,15 @@ public class Boss : MonoBehaviour
         // Iniciar la corutina para cambiar el color a rojo y luego volver al original
         StartCoroutine(FlashRed());
         PlayerMovement.isEmpowered = false;
+    }
+
+    IEnumerator CloseSpotlight()
+    {
+        while (spotlight.pointLightOuterRadius > 0)
+        {
+            spotlight.pointLightOuterRadius -= spotlightCloseSpeed * Time.deltaTime;
+            yield return null;
+        }
     }
 
     IEnumerator FlashRed()

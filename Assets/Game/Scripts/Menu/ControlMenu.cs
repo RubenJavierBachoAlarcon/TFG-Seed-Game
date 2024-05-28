@@ -21,13 +21,18 @@ public class ControlMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI highScore2;
     [SerializeField] private TextMeshProUGUI highScore3;
 
+    public bool deleteData = false;
 
-    
+
+
     void Start()
     {
-        //PlayerPrefs.DeleteAll();
-        //PlayerPrefs.Save();
-        //Debug.Log("Se han borrado los datos");
+        if (deleteData)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+            Debug.Log("Se han borrado los datos");
+        }
     }
 
     public void onButtonNivel(string nivel)

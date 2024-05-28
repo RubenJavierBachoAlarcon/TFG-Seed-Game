@@ -7,8 +7,19 @@ public class ArmMovement : MonoBehaviour
     public float speed = 5f;
     public float lifetime = 4f;
 
+    private SpriteRenderer spriteRenderer;
+
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (Boss_Movements.BossAnimator.GetBool("isEnraged"))
+        {
+            spriteRenderer.color = new Color(1, 0.5f, 0.5f);
+        }
+        else
+        {
+            spriteRenderer.color = new Color(1, 1, 1);
+        }
         Destroy(gameObject, lifetime);
     }
 
