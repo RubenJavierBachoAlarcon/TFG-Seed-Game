@@ -17,7 +17,7 @@ public class Boss_Movements : StateMachineBehaviour
         BossAnimator = animator;
         if (animator.GetBool("isEnraged"))
         {
-            attackDelay = 2;
+            attackDelay = 3;
         }
         attackTimer = 0f;
     }

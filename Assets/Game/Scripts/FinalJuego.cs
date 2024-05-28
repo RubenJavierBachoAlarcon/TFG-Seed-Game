@@ -65,7 +65,7 @@ public class FinalJuego : MonoBehaviour
         finalScore = PlayerPrefs.GetInt("Nivel 2 - Montaña");
         int currentScore = 0;
 
-        UpdateHighScores(finalScore);
+        SaveScoreToPlayerPrefs("Nivel 2 - Montaña");
 
         while (currentScore < finalScore)
         {
@@ -84,31 +84,35 @@ public class FinalJuego : MonoBehaviour
         Debug.Log("Final Score: " + finalScore);
     }
 
-    public void UpdateHighScores(int newScore)
+    void SaveScoreToPlayerPrefs(string nivelActual)
     {
-        // Comprueba si newScore es mayor que HighScore1
-        if (newScore > PlayerPrefs.GetInt("HighScore1", 0))
+        // Get the stored scores
+        int storedScore1 = PlayerPrefs.GetInt(nivelActual + " - 1", 0);
+        int storedScore2 = PlayerPrefs.GetInt(nivelActual + " - 2", 0);
+        int storedScore3 = PlayerPrefs.GetInt(nivelActual + " - 3", 0);
+
+        // If the current score is higher than any of the stored scores, store the current score
+        if (finalScore > storedScore1)
         {
-            // Si newScore es mayor que HighScore1, desplaza los valores actuales hacia abajo
-            PlayerPrefs.SetInt("HighScore3", PlayerPrefs.GetInt("HighScore2", 0));
-            PlayerPrefs.SetInt("HighScore2", PlayerPrefs.GetInt("HighScore1", 0));
-            PlayerPrefs.SetInt("HighScore1", newScore);
+            // Shift the old scores down
+            PlayerPrefs.SetInt(nivelActual + " - 3", storedScore2);
+            PlayerPrefs.SetInt(nivelActual + " - 2", storedScore1);
+            PlayerPrefs.SetInt(nivelActual + " - 1", finalScore);
         }
-        // Si no, comprueba si newScore es mayor que HighScore2
-        else if (newScore > PlayerPrefs.GetInt("HighScore2", 0))
+        else if (finalScore > storedScore2)
         {
-            // Si newScore es mayor que HighScore2, desplaza los valores actuales hacia abajo
-            PlayerPrefs.SetInt("HighScore3", PlayerPrefs.GetInt("HighScore2", 0));
-            PlayerPrefs.SetInt("HighScore2", newScore);
+            PlayerPrefs.SetInt(nivelActual + " - 3", storedScore2);
+            PlayerPrefs.SetInt(nivelActual + " - 2", finalScore);
         }
-        // Si no, comprueba si newScore es mayor que HighScore3
-        else if (newScore > PlayerPrefs.GetInt("HighScore3", 0))
+        else if (finalScore > storedScore3)
         {
-            // Si newScore es mayor que HighScore3, actualiza HighScore3
-            PlayerPrefs.SetInt("HighScore3", newScore);
+            PlayerPrefs.SetInt(nivelActual + " - 3", finalScore);
         }
 
-        // Guarda los cambios en PlayerPrefs
+        Debug.Log("Score 1: " + PlayerPrefs.GetInt(nivelActual + " - 1"));
+        Debug.Log("Score 2: " + PlayerPrefs.GetInt(nivelActual + " - 2"));
+        Debug.Log("Score 3: " + PlayerPrefs.GetInt(nivelActual + " - 3"));
+
         PlayerPrefs.Save();
     }
 }

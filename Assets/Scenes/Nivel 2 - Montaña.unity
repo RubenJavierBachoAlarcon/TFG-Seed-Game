@@ -2366,7 +2366,6 @@ MonoBehaviour:
   - {fileID: 1267453481}
   - {fileID: 43326664}
   musicScriptLevel: {fileID: 1560612783}
-  spotlight: {fileID: 980340161}
   spotlightCloseSpeed: 0.5
 --- !u!114 &726861511
 MonoBehaviour:
@@ -2424,6 +2423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 2008465607}
   scoreText: {fileID: 1772473726}
+  spotlight: {fileID: 980340161}
+  spotlightCloseSpeed: 3
 --- !u!1001 &791873633
 PrefabInstance:
   m_ObjectHideFlags: 0
