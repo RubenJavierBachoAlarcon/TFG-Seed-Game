@@ -373,6 +373,7 @@ MonoBehaviour:
   highScore1: {fileID: 0}
   highScore2: {fileID: 0}
   highScore3: {fileID: 0}
+  deleteData: 0
 --- !u!4 &419312618
 Transform:
   m_ObjectHideFlags: 0
@@ -1941,7 +1942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Juego Hecho por Ruben Javier Bacho Alarcon IES Maestre de Cva Trabajo
+  m_text: "Juego hecho por Ruben Javier Bacho Alarc\xF3n IES Maestre de Cva Trabajo
     de Fin de Grado, 2024\n\nLegacy Adventure Pack \u2013Forest  Creditos a Anokolisa\r\nPixel
     Art Platformer \u2013Village Props  Creditos a Cainos\r\nPixel purple gem \u2013Lunarnia\r\nFree
     Forest Bosses Pixel Art Sprite Sheet pack Creditos a  SwiftJinx\r\nHooded Protagonist
@@ -1950,7 +1951,7 @@ MonoBehaviour:
     Sound Effect by Mikhail from Pixabay\nMecha-Stone Golem from kronovi"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

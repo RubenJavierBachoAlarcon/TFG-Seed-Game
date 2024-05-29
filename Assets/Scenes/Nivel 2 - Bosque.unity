@@ -1734,7 +1734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 0:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1decca11ca31a6d40bd12bb63cf56576, type: 2}
   m_sharedMaterial: {fileID: 6608013626986868464, guid: 1decca11ca31a6d40bd12bb63cf56576, type: 2}
@@ -20660,7 +20660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BoundingShape2D: {fileID: 1587361634}
-  m_Damping: 0
+  m_Damping: 0.5
   m_MaxWindowSize: -1
 --- !u!114 &1027051844
 MonoBehaviour:

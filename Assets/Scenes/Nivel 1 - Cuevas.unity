@@ -73300,7 +73300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BoundingShape2D: {fileID: 1210339292}
-  m_Damping: 0
+  m_Damping: 0.5
   m_MaxWindowSize: -1
 --- !u!114 &1027051844
 MonoBehaviour:

@@ -16,6 +16,8 @@ public class ColisionEnemigo : MonoBehaviour
     public int vida = 10; // Vida del jugador
     private bool isDying = false;
 
+    public CinemachineConfiner2D confiner;
+    private float dampingConfiner = 0;
 
     // Necesario para trabajar con UI
 
@@ -29,6 +31,7 @@ public class ColisionEnemigo : MonoBehaviour
 
     private void Start()
     {
+        dampingConfiner = confiner.m_Damping;
         PlayerMovement.isDying = false;
         PlayerMovement.isRespawning = false;
         checkPoint = respawnPoint;
@@ -89,6 +92,8 @@ public class ColisionEnemigo : MonoBehaviour
         {
             // Decrementa la vida
             vida--;
+
+            confiner.m_Damping = 0f;
 
             // Comienza la corrutina de shake en la barra de vida
             StartCoroutine(ShakeHealthBar());
@@ -180,6 +185,8 @@ public class ColisionEnemigo : MonoBehaviour
         }
 
         PlayerMovement.isRespawning = false;
+
+        confiner.m_Damping = dampingConfiner;
     }
 
     IEnumerator ChangeColorAfterDamage()
