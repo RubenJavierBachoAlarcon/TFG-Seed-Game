@@ -7,6 +7,7 @@ public class AnimacionInicioNiveles : MonoBehaviour
 {
     private PlayableDirector director;
     public PlayerMovement playerMovement;
+    public UnityEngine.InputSystem.PlayerInput playerInput;
     public Animator animator;
     public PauseMenu pauseMenu;
     public static bool isPlaying = false;
@@ -16,6 +17,7 @@ public class AnimacionInicioNiveles : MonoBehaviour
         isPlaying = true;
         pauseMenu.pauseTimer();
         playerMovement.enabled = false;
+        playerInput.enabled = false;
         director = GetComponent<PlayableDirector>();
         director.stopped += OnPlayableDirectorStopped;
     }
@@ -27,9 +29,11 @@ public class AnimacionInicioNiveles : MonoBehaviour
         {
             isPlaying = false;
             playerMovement.enabled = true;
+            playerInput.enabled = true;
             animator.Play("Quieto");
             pauseMenu.resumeTimer();
         }
     }
+
 
 }

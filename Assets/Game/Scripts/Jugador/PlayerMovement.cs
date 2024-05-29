@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool isEmpowered = false;
 
     #region INPUT PARAMETERS
-    private Vector2 _moveInput;
+    public Vector2 _moveInput;
 
     public float LastPressedJumpTime { get; private set; }
     public float LastPressedDashTime { get; private set; }
@@ -187,38 +187,42 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!isDying)
         {
-            if (isUsingKeyboard)
-            {
-                _moveInput.x = forceMoveRight ? 1 : Input.GetAxisRaw("Horizontal");
-                _moveInput.y = Input.GetAxisRaw("Vertical");
-            }
-            else
-            {
-                // Si la entrada del joystick es mayor que un pequeño umbral, se considera que es máxima
-                _moveInput.x = forceMoveRight ? 1 : (Mathf.Abs(joystick.Horizontal) > 0.1f ? Mathf.Sign(joystick.Horizontal) : joystick.Horizontal);
-                _moveInput.y = joystick.Vertical;
-            }
+
+            //_moveInput.x = forceMoveRight ? 1 : Input.GetAxisRaw("Horizontal");
+            //_moveInput.y = Input.GetAxisRaw("Vertical");
+
+            //if (isUsingKeyboard)
+            //{
+            //    _moveInput.x = forceMoveRight ? 1 : Input.GetAxisRaw("Horizontal");
+            //    _moveInput.y = Input.GetAxisRaw("Vertical");
+            //}
+            //else
+            //{
+            //    // Si la entrada del joystick es mayor que un pequeño umbral, se considera que es máxima
+            //    _moveInput.x = forceMoveRight ? 1 : (Mathf.Abs(joystick.Horizontal) > 0.1f ? Mathf.Sign(joystick.Horizontal) : joystick.Horizontal);
+            //    _moveInput.y = joystick.Vertical;
+            //}
+
+
         }
 
         bool isRunning = Mathf.Abs(_moveInput.x) > 0;
         animator.SetBool("isRunning", isRunning);
 
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.J)) && !isWindUpActive)
-        {
-            animator.SetTrigger("Jump");
+        //if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.J)) && !isWindUpActive)
+        //{
+        //    OnJumpInput();
+        //}
 
-            OnJumpInput();
-        }
+        //if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.J)) && !isWindUpActive)
+        //{
+        //    OnJumpUpInput();
+        //}
 
-        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.J)) && !isWindUpActive)
-        {
-            OnJumpUpInput();
-        }
-
-        if ((Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.K)) && !isWindUpActive)
-        {
-            OnDashInput();
-        }
+        //if ((Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.K)) && !isWindUpActive)
+        //{
+        //    OnDashInput();
+        //}
         #endregion
 
         #region COLLISION CHECKS
@@ -529,27 +533,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleInput()
     {
-        float horizontalInput;
-
-        // Si se está utilizando el teclado, obtén la entrada del teclado
-        if (isUsingKeyboard)
-        {
-            horizontalInput = Input.GetAxisRaw("Horizontal");
-        }
-        // Si se está utilizando el joystick, obtén la entrada del joystick
-        else
-        {
-            horizontalInput = joystick.Horizontal;
-        }
 
         // Actualizar la dirección a la que mira el personaje
-        if (horizontalInput != 0)
+        if (_moveInput.x != 0)
         {
-            CheckDirectionToFace(horizontalInput > 0);
+            CheckDirectionToFace(_moveInput.x > 0);
         }
 
         // Actualizar el parámetro de animación "isRunning" basado en la entrada
-        bool isRunning = Mathf.Abs(horizontalInput) > 0;
+        bool isRunning = Mathf.Abs(_moveInput.x) > 0;
         animator.SetBool("isRunning", isRunning);
     }
 
@@ -607,6 +599,7 @@ public class PlayerMovement : MonoBehaviour
     //Methods which whandle input detected in Update()
     public void OnJumpInput()
     {
+        animator.SetTrigger("Jump");
         if (!isDying)
         {
             LastPressedJumpTime = Data.jumpInputBufferTime;
@@ -927,6 +920,15 @@ public class PlayerMovement : MonoBehaviour
     {
         forceMoveRight = true;
     }
+
+    public void SetMoveInput(Vector2 moveInput)
+    {
+        if (!isDying)
+        {
+            _moveInput = moveInput;
+        }
+    }
+
 
     private IEnumerator WaitForAnimation(Animator animator, string animationName)
     {

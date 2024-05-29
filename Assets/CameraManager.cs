@@ -10,6 +10,7 @@ public class CameraManager : MonoBehaviour
     private PlayableDirector director; // Asigna el director de la timeline aquí
     public PauseMenu pauseMenu;
     public PlayerMovement playerMovement;
+    public UnityEngine.InputSystem.PlayerInput playerInput;
     public TutorialTrigger tutorialTrigger;
 
     private void Start()
@@ -18,6 +19,7 @@ public class CameraManager : MonoBehaviour
         director.stopped += OnPlayableDirectorStopped;
         pauseMenu.pauseTimer();
         playerMovement.enabled = false;
+        playerInput.enabled = false;
         tutorialTrigger.enabled = false;
     }   
 
@@ -38,6 +40,7 @@ public class CameraManager : MonoBehaviour
             DisableCameras();
             pauseMenu.resumeTimer();
             playerMovement.enabled = true;
+            playerInput.enabled = true;
             tutorialTrigger.enabled = true;
             tutorialTrigger.startText();
         }
