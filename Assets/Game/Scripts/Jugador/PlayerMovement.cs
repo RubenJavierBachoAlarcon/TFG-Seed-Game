@@ -600,9 +600,12 @@ public class PlayerMovement : MonoBehaviour
     //Methods which whandle input detected in Update()
     public void OnJumpInput()
     {
-        animator.SetTrigger("Jump");
         if (!isDying)
         {
+            if (!CanJump())
+            {
+                animator.SetTrigger("Jump");
+            }
             LastPressedJumpTime = Data.jumpInputBufferTime;
         }
     }
