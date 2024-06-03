@@ -38,6 +38,7 @@ public class PlayerInput : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        Debug.Log("Move");
         moveInput = context.ReadValue<Vector2>();
         // Add a small deadzone
         if (moveInput.magnitude < 0.1f)
