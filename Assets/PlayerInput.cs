@@ -13,13 +13,17 @@ public class PlayerInput : MonoBehaviour
     {
         if (!PlayerMovement.isWindUpActive)
         {
-            if (context.performed)
+            if (context.started)
             {
-                playerMovement.OnJumpInput();
-            }
-            if (context.canceled)
-            {
-                playerMovement.OnJumpUpInput();
+                Debug.Log(playerMovement.IsJumping);
+                if (playerMovement.IsJumping)
+                {
+                    playerMovement.OnDashInput();
+                }
+                else
+                {
+                    playerMovement.OnJumpInput();
+                }
             }
         }
     }
