@@ -31,6 +31,8 @@ Library: C:\Users\javie\Desktop\TFG-Seed-Game\Temp\BurstOutput\Data\Plugins\x86_
 --assembly-defines=Unity.2D.Common.Runtime;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.Timeline;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Subsystem.Registration;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;
@@ -137,6 +139,8 @@ Library: C:\Users\javie\Desktop\TFG-Seed-Game\Temp\BurstOutput\Data\Plugins\x86_
 --assembly-defines=Unity.2D.Common.Runtime;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.Timeline;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Subsystem.Registration;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;
@@ -245,6 +249,8 @@ Library: C:\Users\javie\Desktop\TFG-Seed-Game\Temp\BurstOutput\Data\Plugins\x86_
 --assembly-defines=Unity.2D.Common.Runtime;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.Timeline;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Subsystem.Registration;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;
@@ -319,6 +325,8 @@ Library: C:\Users\javie\Desktop\TFG-Seed-Game\Temp\BurstOutput\Data\Plugins\x86_
 --assembly-defines=Unity.2D.Common.Runtime;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.Timeline;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Subsystem.Registration;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;

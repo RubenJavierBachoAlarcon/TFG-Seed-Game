@@ -38,7 +38,7 @@ public class Logros : MonoBehaviour
         {
             logro3.GetComponent<Image>().sprite = logro3Imagen;
         }
-        if (PlayerPrefs.GetInt("Nivel 2 - Montaña") == 1)
+        if (PlayerPrefs.GetInt("Nivel 2 - Montaña - Completed") == 1)
         {
             logro4.GetComponent<Image>().sprite = logro4Imagen;
         }
@@ -54,9 +54,14 @@ public class Logros : MonoBehaviour
 
         Debug.Log(PlayerPrefs.GetInt("GemaAmarilla0") + " " + PlayerPrefs.GetInt("GemaAmarilla1") + " " + PlayerPrefs.GetInt("GemaAmarilla2") + " " + PlayerPrefs.GetInt("GemaAmarilla3") + " " + PlayerPrefs.GetInt("GemaAmarilla4") + " " + PlayerPrefs.GetInt("GemaAmarilla5") + " " + PlayerPrefs.GetInt("GemaAmarilla6"));
 
-        if (PlayerPrefs.GetInt("Nivel 1 - Cuevas" + " - 1", 0) + PlayerPrefs.GetInt("Nivel 2 - Cuevas" + " - 1", 0) + PlayerPrefs.GetInt("Nivel 3 - Cuevas" + " - 1", 0)
-            + PlayerPrefs.GetInt("Nivel 1 - Bosque" + " - 1", 0) + PlayerPrefs.GetInt("Nivel 2 - Bosque" + " - 1", 0) + PlayerPrefs.GetInt("Nivel 1 - Montaña" + " - 1", 0)
-            + PlayerPrefs.GetInt("Nivel 2 - Montaña" + " - 1", 0) >= 1000)
+        if (PlayerPrefs.GetInt("Nivel 1 - Cuevas" + " - 1", 0) +
+            PlayerPrefs.GetInt("Nivel 2 - Cuevas" + " - 1", 0) +
+            PlayerPrefs.GetInt("Nivel 3 - Cuevas" + " - 1", 0) +
+            PlayerPrefs.GetInt("Nivel 1 - Bosque" + " - 1", 0) +
+            PlayerPrefs.GetInt("Nivel 2 - Bosque" + " - 1", 0) +
+            PlayerPrefs.GetInt("Nivel 1 - Montaña" + " - 1", 0) +
+            PlayerPrefs.GetInt("Nivel 2 - Montaña" + " - 1", 0) >= 40000
+            )
         {
             logro6.GetComponent<Image>().sprite = logro6Imagen;
         }
@@ -101,7 +106,7 @@ public class Logros : MonoBehaviour
     public void abrirPanelDescripcion6()
     {
         tituloLogro.text = "Velocista";
-        descripcionLogro.text = "Obtener 1000 puntos en todos los niveles";
+        descripcionLogro.text = "Acumular 40,000 puntos en total en todos los niveles";
         panelDescripcionLogro.SetActive(true);
     }
 

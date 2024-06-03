@@ -56,7 +56,7 @@ public class SeleccionNiveles : MonoBehaviour
             btnNivel7.interactable = true;
             btnNivel6.GetComponent<Image>().color = Color.green;
         }
-        if (PlayerPrefs.GetInt("Nivel 2 - Montaña") == 1)
+        if (PlayerPrefs.GetInt("Nivel 2 - Montaña - Completed") == 1)
         {
             btnNivel7.GetComponent<Image>().color = Color.green;
         }

@@ -77,6 +77,7 @@ public class Boss : MonoBehaviour
                 musicScriptLevel.EndAudio();
                 GetComponent<BoxCollider2D>().enabled = false;
                 gemMaps[5].SetActive(false);
+                PlayerPrefs.SetInt("Nivel 2 - Montaña - Completed", 1);
                 break;
             default:
                 animator.SetTrigger("Die");

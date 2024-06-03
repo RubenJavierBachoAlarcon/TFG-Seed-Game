@@ -44,13 +44,17 @@ public class MusicScript : MonoBehaviour
 
     void UpdateButtonReference()
     {
-        muteButton = GameObject.Find("BtnMute").GetComponent<Button>();
-        if (muteButton != null)
+        GameObject muteButtonObject = GameObject.Find("BtnMute");
+        if (muteButtonObject != null)
         {
-            muteButton.onClick.AddListener(toggleMute);
-            bool isMuted = PlayerPrefs.GetInt("Muted", 0) == 1;
-            muteButton.image.sprite = isMuted ? muteSprite : unmuteSprite;
-            audioMixer.SetFloat("MasterVolume", isMuted ? -80 : 0);
+            muteButton = muteButtonObject.GetComponent<Button>();
+            if (muteButton != null)
+            {
+                muteButton.onClick.AddListener(toggleMute);
+                bool isMuted = PlayerPrefs.GetInt("Muted", 0) == 1;
+                muteButton.image.sprite = isMuted ? muteSprite : unmuteSprite;
+                audioMixer.SetFloat("MasterVolume", isMuted ? -80 : 0);
+            }
         }
     }
 
