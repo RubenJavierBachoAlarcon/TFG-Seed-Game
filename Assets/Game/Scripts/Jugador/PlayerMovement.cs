@@ -199,8 +199,10 @@ public class PlayerMovement : MonoBehaviour
             //else
             //{
             //    // Si la entrada del joystick es mayor que un pequeño umbral, se considera que es máxima
-            //    _moveInput.x = forceMoveRight ? 1 : (Mathf.Abs(joystick.Horizontal) > 0.1f ? Mathf.Sign(joystick.Horizontal) : joystick.Horizontal);
-            //    _moveInput.y = joystick.Vertical;
+#if UNITY_ANDROID || UNITY_IOS
+            _moveInput.x = forceMoveRight ? 1 : (Mathf.Abs(joystick.Horizontal) > 0.1f ? Mathf.Sign(joystick.Horizontal) : joystick.Horizontal);
+            _moveInput.y = joystick.Vertical;
+#endif
             //}
 
 
@@ -417,8 +419,7 @@ public class PlayerMovement : MonoBehaviour
             // Ralentiza el tiempo a la mitad de la velocidad normal
             Time.timeScale = 0.4f;
 
-            // Programa el tiempo para volver a la normalidad después de 1 segundo
-            StartCoroutine(RestoreTimeAfterDelay(0.2f));
+            StartCoroutine(RestoreTimeAfterDelay(0.4f));
 
         }
 

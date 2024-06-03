@@ -157,6 +157,17 @@
                 },
                 {
                     "name": "",
+                    "id": "9c04faaf-bfa5-4c66-bcaf-2b5e0bf4854f",
+                    "path": "<Joystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "58d57e57-508b-4130-8f65-a74ba2fd285b",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
