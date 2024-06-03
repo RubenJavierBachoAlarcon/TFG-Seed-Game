@@ -20,7 +20,7 @@ public class FinalJuego : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Nivel Final");
+        FadeManager.Instance.FadeToScene("Nivel 2 - Montaña");
     }
 
     public void MenuGame()

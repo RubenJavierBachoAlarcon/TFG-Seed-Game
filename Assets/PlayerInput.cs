@@ -35,14 +35,32 @@ public class PlayerInput : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+        // Add a small deadzone
+        if (moveInput.magnitude < 0.1f)
+        {
+            moveInput = Vector2.zero;
+        }
+        else
+        {
+            // Normalize to 8 directions
+            float angle = Mathf.Atan2(moveInput.y, moveInput.x);
+            angle = Mathf.Round(angle / (Mathf.PI / 4)) * (Mathf.PI / 4);
+            moveInput = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+        }
         playerMovement.SetMoveInput(moveInput);
     }
 
-    public void Dash()
+
+
+
+    public void Dash(InputAction.CallbackContext context)
     {
         if (!PlayerMovement.isWindUpActive)
         {
-            playerMovement.OnDashInput();
+            if (context.performed)
+            {
+                playerMovement.OnDashInput();
+            }
         }
     }
 

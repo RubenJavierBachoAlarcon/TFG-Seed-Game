@@ -17,6 +17,7 @@ public class ColisionEnemigo : MonoBehaviour
     private bool isDying = false;
 
     public CinemachineConfiner2D confiner;
+    private CinemachineVirtualCamera vcam;
     private float dampingConfiner = 0;
 
     // Necesario para trabajar con UI
@@ -29,9 +30,21 @@ public class ColisionEnemigo : MonoBehaviour
 
     public PauseMenu pauseMenu;
 
+    public UnityEngine.InputSystem.PlayerInput playerInput;
+
+    Transform objetoSeguido;
+
     private void Start()
     {
-        dampingConfiner = confiner.m_Damping;
+        if (confiner != null)
+        {
+            vcam = confiner.GetComponent<CinemachineVirtualCamera>();
+            if (vcam != null)
+            {
+                objetoSeguido = vcam.Follow;
+            }
+            dampingConfiner = confiner.m_Damping;
+        }
         PlayerMovement.isDying = false;
         PlayerMovement.isRespawning = false;
         checkPoint = respawnPoint;
@@ -93,6 +106,9 @@ public class ColisionEnemigo : MonoBehaviour
             // Decrementa la vida
             vida--;
 
+            playerInput.enabled = false;
+            vcam.Follow = null;
+
             confiner.m_Damping = 0f;
 
             // Comienza la corrutina de shake en la barra de vida
@@ -101,7 +117,7 @@ public class ColisionEnemigo : MonoBehaviour
             if (!isDying)
             {
                 PlayerMovement.isDying = true;
-                isDying = true; 
+                isDying = true;
                 animator.SetTrigger("Die");
                 if (vida <= 0)
                 {
@@ -162,6 +178,8 @@ public class ColisionEnemigo : MonoBehaviour
         PlayerMovement.isRespawning = true;
         // Espera el tiempo especificado
         yield return new WaitForSeconds(respawnDelay);
+        playerInput.enabled = true;
+        vcam.Follow = objetoSeguido;
 
         // Detiene el movimiento del personaje
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -186,6 +204,8 @@ public class ColisionEnemigo : MonoBehaviour
 
         PlayerMovement.isRespawning = false;
 
+
+
         confiner.m_Damping = dampingConfiner;
     }
 
@@ -198,7 +218,8 @@ public class ColisionEnemigo : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         // Cambia el color del sprite de nuevo al original
-        if (PlayerMovement.isEmpowered){
+        if (PlayerMovement.isEmpowered)
+        {
             spriteRenderer.color = Color.yellow;
         }
         else

@@ -15,13 +15,13 @@ public class ChangeScene : MonoBehaviour
     public string nivelActual;
     [SerializeField] private PlayerMovement playerMovement;
 
-    [SerializeField] private TextMeshProUGUI scoreText; // Si estás usando TextMesh Pro
+    [SerializeField] private TextMeshProUGUI scoreText; // Si estï¿½s usando TextMesh Pro
     private int finalScore;
     [SerializeField] private UnityEngine.InputSystem.PlayerInput playerInput;
 
     void Start()
     {
-        pauseMenu = gameManager.GetComponent<PauseMenu>(); // Agrega esta línea
+        pauseMenu = gameManager.GetComponent<PauseMenu>(); // Agrega esta lï¿½nea
     }
 
 
@@ -29,7 +29,7 @@ public class ChangeScene : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (nivelActual != "Nivel 1 - Montaña")
+            if (nivelActual != "Nivel 1 - Montaï¿½a")
             {
                 playerMovement.forceRight();
             }
@@ -56,7 +56,7 @@ public class ChangeScene : MonoBehaviour
         float timer = 0;
         while (timer < 1)
         {
-            timer += Time.deltaTime * 2; // 2 es la velocidad de la animación
+            timer += Time.deltaTime * 2; // 2 es la velocidad de la animaciï¿½n
             FinalMenuPanel.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, timer);
             yield return null;
         }
@@ -65,26 +65,24 @@ public class ChangeScene : MonoBehaviour
     IEnumerator UpdateScore()
     {
         float finalTime = pauseMenu.GetGameTime();
-        finalScore = (int)(100000 / finalTime); // Aumenta el numerador para obtener una puntuación más alta
+        finalScore = (int)(100000 / finalTime); // Aumenta el numerador para obtener una puntuaciï¿½n mï¿½s alta
         Debug.Log("Final Score: " + finalScore);
         int currentScore = 0;
 
         SaveScoreToPlayerPrefs();
-        if (nivelActual != "Nivel4")
+        while (currentScore < finalScore)
         {
             while (currentScore < finalScore)
             {
-                currentScore += (int)(finalScore * Time.deltaTime * 0.2f); // Aumenta el factor de incremento para que la puntuación se incremente más rápido
-                scoreText.text = currentScore.ToString() + "\nPoints"; // Agrega " Points" al final del texto de la puntuación
+                currentScore += (int)(finalScore * Time.deltaTime * 0.2f); // Aumenta el factor de incremento para que la puntuaciï¿½n se incremente mï¿½s rï¿½pido
+                scoreText.text = currentScore.ToString() + "\nPoints"; // Agrega " Points" al final del texto de la puntuaciï¿½n
                 yield return null;
             }
-            // Asegúrate de que la puntuación final sea exactamente igual a finalScore
-            scoreText.text = finalScore.ToString() + "\nPoints"; // Agrega " Points" al final del texto de la puntuación
+            // Asegï¿½rate de que la puntuaciï¿½n final sea exactamente igual a finalScore
+            scoreText.text = finalScore.ToString() + "\nPoints"; // Agrega " Points" al final del texto de la puntuaciï¿½n
         }
-        else
-        {
-            FadeManager.Instance.FadeToScene("Cutscene Final");
-        }
+        // Asegï¿½rate de que la puntuaciï¿½n final sea exactamente igual a finalScore
+        scoreText.text = finalScore.ToString() + "\nPoints"; // Agrega " Points" al final del texto de la puntuaciï¿½n
 
         //Verify is actual score is greater than the stored score
 

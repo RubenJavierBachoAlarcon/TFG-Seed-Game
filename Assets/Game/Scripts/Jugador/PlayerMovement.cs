@@ -105,8 +105,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool wasOnGround;
 
-    public bool isUsingKeyboard;
-
     private void Awake()
     {
 
@@ -176,15 +174,15 @@ public class PlayerMovement : MonoBehaviour
 
 
         // Si se están utilizando los controles del teclado, establece isUsingKeyboard a true
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            isUsingKeyboard = true;
-        }
-        // Si se está utilizando el joystick, establece isUsingKeyboard a false
-        else if (joystick.Horizontal != 0f || joystick.Vertical != 0f)
-        {
-            isUsingKeyboard = false;
-        }
+        //if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        //{
+        //    isUsingKeyboard = true;
+        //}
+        //// Si se está utilizando el joystick, establece isUsingKeyboard a false
+        //else if (joystick.Horizontal != 0f || joystick.Vertical != 0f)
+        //{
+        //    isUsingKeyboard = false;
+        //}
         if (!isDying)
         {
 
@@ -907,9 +905,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Suelo") && !PlayerMovement.isDying && !PlayerMovement.isRespawning)
         {
-            // Verifica si la animación "Apareciendo" está en reproducción
-            isFallingAnimation = false; animator.Play("Quieto");
-            animator.Play("Quieto");
+            isFallingAnimation = false;
+            if (animator != null)
+            {
+                animator.Play("Quieto");
+            }
         }
     }
 
@@ -922,7 +922,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDying)
         {
-            _moveInput = moveInput;
+            _moveInput = forceMoveRight ? new Vector2(1, 0) : moveInput;
         }
     }
 

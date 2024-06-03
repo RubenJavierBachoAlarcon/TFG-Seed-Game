@@ -14,6 +14,9 @@ public class MusicScriptLevel : MonoBehaviour
         if (loopClip != null)
         {
             loopClip.LoadAudioData();
+        }
+        if (endClip != null)
+        {
             endClip.LoadAudioData();
         }
         StartCoroutine(PlayLoopWhenIntroStops());
@@ -49,4 +52,25 @@ public class MusicScriptLevel : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
+    public void FadeOut()
+    {
+        StartCoroutine(FadeOutCoroutine());
+    }
+
+    private IEnumerator FadeOutCoroutine()
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / 1f;
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume; // Restaurar el volumen original
+    }
+
 }

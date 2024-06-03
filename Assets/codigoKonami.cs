@@ -21,6 +21,11 @@ public class codigoKonami : MonoBehaviour
 
     private List<KeyCode> entradaJugador = new List<KeyCode>();
 
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -53,6 +58,7 @@ public class codigoKonami : MonoBehaviour
                     if (jugador != null)
                     {
                         jugador.GetComponent<ColisionEnemigo>().vida = 999;
+                        jugador.GetComponent<Animator>().Play("Konami");
                     }
                 }
             }
