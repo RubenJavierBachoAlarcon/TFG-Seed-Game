@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class PlayerInput : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public Vector2 moveInput;
+    public string level;
+    private PauseMenu pauseMenu;
+
+    private void Start()
+    {
+        pauseMenu = FindObjectOfType<PauseMenu>();
+    }
 
     public void Jump(InputAction.CallbackContext context)
     {
@@ -38,4 +46,27 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    public void NextLevel(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Time.timeScale = 1;
+            FadeManager.Instance.FadeToScene(level);
+        }
+    }
+
+    public void Pause(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (Time.timeScale == 0)
+            {
+                pauseMenu.ResumeGame();
+            }
+            else
+            {
+                pauseMenu.PauseGame();
+            }
+        }
+    }
 }

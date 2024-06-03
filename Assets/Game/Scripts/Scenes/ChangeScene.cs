@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+
 public class ChangeScene : MonoBehaviour
 {
     public static ChangeScene Instance { get; private set; }
@@ -16,6 +17,7 @@ public class ChangeScene : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scoreText; // Si estás usando TextMesh Pro
     private int finalScore;
+    [SerializeField] private UnityEngine.InputSystem.PlayerInput playerInput;
 
     void Start()
     {
@@ -46,6 +48,8 @@ public class ChangeScene : MonoBehaviour
 
     IEnumerator ShowFinalMenuPanel()
     {
+        playerInput.SwitchCurrentActionMap("Menu");
+
         FinalMenuPanel.SetActive(true);
         StartCoroutine(UpdateScore());
         FinalMenuPanel.transform.localScale = Vector3.zero;

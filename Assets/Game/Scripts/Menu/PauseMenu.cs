@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -12,13 +13,20 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] public GameObject panelNegro;
     [SerializeField] public GameObject PauseButton;
     [SerializeField] private TMP_Text timerText;
-   
+    private UnityEngine.InputSystem.PlayerInput playerInput;
+
 
 
     private float gameTimer = 0.0f;
     private bool isPaused = false;
 
     private bool isGameOver = false;
+
+
+    private void Start()
+    {
+        playerInput = FindObjectOfType<UnityEngine.InputSystem.PlayerInput>();
+    }
 
     void Update()
     {
@@ -70,6 +78,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         FadeManager.Instance.FadeToScene(level);
     }
+
     public void pauseTimer()
     {
         isPaused = true;
@@ -94,6 +103,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (!isGameOver)
         {
+            playerInput.SwitchCurrentActionMap("Gameover");
             isGameOver = true;
             isPaused = true;
             
