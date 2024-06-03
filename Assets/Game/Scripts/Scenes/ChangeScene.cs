@@ -70,7 +70,7 @@ public class ChangeScene : MonoBehaviour
         {
             while (currentScore < finalScore)
             {
-                currentScore += (int)(Time.deltaTime * 500); // Aumenta el factor de incremento para que la puntuación se incremente más rápido
+                currentScore += (int)(finalScore * Time.deltaTime * 0.2f); // Aumenta el factor de incremento para que la puntuación se incremente más rápido
                 scoreText.text = currentScore.ToString() + "\nPoints"; // Agrega " Points" al final del texto de la puntuación
                 yield return null;
             }

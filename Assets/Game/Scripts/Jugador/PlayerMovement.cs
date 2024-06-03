@@ -907,9 +907,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Suelo") && !PlayerMovement.isDying && !PlayerMovement.isRespawning)
         {
-
-            //another log dont use Debug.Log pls use Debug.LogError
-
             // Verifica si la animación "Apareciendo" está en reproducción
             isFallingAnimation = false; animator.Play("Quieto");
             animator.Play("Quieto");
