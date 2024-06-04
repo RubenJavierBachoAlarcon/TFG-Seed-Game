@@ -23,14 +23,13 @@ public class PlayerInput : MonoBehaviour
         {
             if (context.started)
             {
-                Debug.Log(playerMovement.IsJumping);
-                if (playerMovement.IsJumping)
+                if (playerMovement.CanJump() || playerMovement.CanWallJump() || !playerMovement.IsJumping && !playerMovement.IsWallJumping)
                 {
-                    playerMovement.OnDashInput();
+                    playerMovement.OnJumpInput();
                 }
                 else
                 {
-                    playerMovement.OnJumpInput();
+                    playerMovement.OnDashInput();
                 }
             }
         }

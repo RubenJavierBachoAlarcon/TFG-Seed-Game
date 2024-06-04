@@ -198,8 +198,20 @@ public class PlayerMovement : MonoBehaviour
             //{
             //    // Si la entrada del joystick es mayor que un pequeño umbral, se considera que es máxima
 #if UNITY_ANDROID || UNITY_IOS
-            _moveInput.x = forceMoveRight ? 1 : (Mathf.Abs(joystick.Horizontal) > 0.1f ? Mathf.Sign(joystick.Horizontal) : joystick.Horizontal);
-            _moveInput.y = joystick.Vertical;
+            // Add a small deadzone
+            if (joystick.Direction.magnitude < 0.1f)
+            {
+                _moveInput = Vector2.zero;
+            }
+            else
+            {
+                // Normalize to 8 directions
+                float angle = Mathf.Atan2(joystick.Vertical, joystick.Horizontal);
+                angle = Mathf.Round(angle / (Mathf.PI / 4)) * (Mathf.PI / 4);
+                _moveInput = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+                _moveInput.x = forceMoveRight ? 1 : _moveInput.x;
+            }
+
 #endif
             //}
 
@@ -853,12 +865,12 @@ public class PlayerMovement : MonoBehaviour
             Turn();
     }
 
-    private bool CanJump()
+    public bool CanJump()
     {
         return LastOnGroundTime > 0 && !IsJumping;
     }
 
-    private bool CanWallJump()
+    public bool CanWallJump()
     {
         return LastPressedJumpTime > 0 && LastOnWallTime > 0 && LastOnGroundTime <= 0 && (!IsWallJumping ||
              (LastOnWallRightTime > 0 && _lastWallJumpDir == 1) || (LastOnWallLeftTime > 0 && _lastWallJumpDir == -1));
