@@ -222,6 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: d031829f90009bc45b9a42b50fc5a67a, type: 2}
   joystick: {fileID: 0}
+  _dashesLeft: 0
+  _moveInput: {x: 0, y: 0}
   _groundCheckPoint: {fileID: 8379274698186320011}
   _groundCheckSize: {x: 0.39, y: 0.3}
   _frontWallCheckPoint: {fileID: 1820181659312529920}
@@ -232,7 +234,6 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  virtualCamera: {fileID: 0}
   luzPersonaje: {fileID: 0}
   forceMoveRight: 0
   ral: 0
@@ -240,7 +241,6 @@ MonoBehaviour:
   dashColor: {r: 1, g: 0, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   empoweredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  isUsingKeyboard: 0
 --- !u!81 &684714431050893371
 AudioListener:
   m_ObjectHideFlags: 0
@@ -267,11 +267,13 @@ MonoBehaviour:
   respawnDelay: 1
   animator: {fileID: 5475544439343507733}
   vida: 10
+  confiner: {fileID: 0}
   healthBar: {fileID: 0}
   sprites: []
   defaultSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
   pauseMenu: {fileID: 0}
+  playerInput: {fileID: 0}
 --- !u!1 &4799849175713488539
 GameObject:
   m_ObjectHideFlags: 0
