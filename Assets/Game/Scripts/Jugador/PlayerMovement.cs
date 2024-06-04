@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     private int _lastWallJumpDir;
 
     //Dash
-    private int _dashesLeft;
+    public int _dashesLeft;
     private bool _dashRefilling;
     private Vector2 _lastDashDir;
     private bool _isDashAttacking;

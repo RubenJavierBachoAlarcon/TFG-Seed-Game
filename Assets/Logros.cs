@@ -60,7 +60,7 @@ public class Logros : MonoBehaviour
             PlayerPrefs.GetInt("Nivel 1 - Bosque" + " - 1", 0) +
             PlayerPrefs.GetInt("Nivel 2 - Bosque" + " - 1", 0) +
             PlayerPrefs.GetInt("Nivel 1 - Montaña" + " - 1", 0) +
-            PlayerPrefs.GetInt("Nivel 2 - Montaña" + " - 1", 0) >= 40000
+            PlayerPrefs.GetInt("Nivel 2 - Montaña" + " - 1", 0) >= 30000
             )
         {
             logro6.GetComponent<Image>().sprite = logro6Imagen;
@@ -106,7 +106,7 @@ public class Logros : MonoBehaviour
     public void abrirPanelDescripcion6()
     {
         tituloLogro.text = "Velocista";
-        descripcionLogro.text = "Acumular 40,000 puntos en total en todos los niveles";
+        descripcionLogro.text = "Acumular 30,000 puntos en total en todos los niveles";
         panelDescripcionLogro.SetActive(true);
     }
 

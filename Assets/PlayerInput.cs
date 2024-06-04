@@ -23,7 +23,9 @@ public class PlayerInput : MonoBehaviour
         {
             if (context.started)
             {
-                if (playerMovement.CanJump() || playerMovement.CanWallJump() || !playerMovement.IsJumping && !playerMovement.IsWallJumping)
+                Debug.Log("CanJump: " + playerMovement.CanJump());
+                Debug.Log("CanWallJump: " + playerMovement.CanWallJump());
+                if (playerMovement.CanJump() || playerMovement.CanSlide())
                 {
                     playerMovement.OnJumpInput();
                 }
@@ -35,9 +37,9 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("Move");
         moveInput = context.ReadValue<Vector2>();
         // Add a small deadzone
         if (moveInput.magnitude < 0.1f)
