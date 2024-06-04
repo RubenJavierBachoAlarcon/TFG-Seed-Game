@@ -25,7 +25,8 @@ public class PlayerInput : MonoBehaviour
             {
                 Debug.Log("CanJump: " + playerMovement.CanJump());
                 Debug.Log("CanWallJump: " + playerMovement.CanWallJump());
-                if (playerMovement.CanJump() || playerMovement.CanSlide())
+                Debug.Log("LastOnWallLeftTime: " + playerMovement.LastOnWallLeftTime);
+                if (playerMovement.CanJump() || playerMovement.LastOnWallLeftTime > 0)
                 {
                     playerMovement.OnJumpInput();
                 }

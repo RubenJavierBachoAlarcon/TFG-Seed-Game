@@ -197,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
             //else
             //{
             //    // Si la entrada del joystick es mayor que un pequeño umbral, se considera que es máxima
-#if UNITY_ANDROID || UNITY_IOS
+
             // Add a small deadzone
             if (joystick.Direction.magnitude < 0.1f)
             {
@@ -212,7 +212,6 @@ public class PlayerMovement : MonoBehaviour
                 _moveInput.x = forceMoveRight ? 1 : _moveInput.x;
             }
 
-#endif
             //}
 
 

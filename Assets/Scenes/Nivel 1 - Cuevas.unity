@@ -4931,7 +4931,7 @@ GameObject:
   - component: {fileID: 817214596}
   m_Layer: 3
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74760,7 +74760,7 @@ Transform:
   m_GameObject: {fileID: 1376327403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3658483, y: -10.03928, z: -10}
+  m_LocalPosition: {x: 1.3660655, y: -10.03928, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75118,6 +75118,14 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1027051844}
+    - target: {fileID: 3209041788893121400, guid: d541b440ece4e984e801aa2f9d3bdc58, type: 3}
+      propertyPath: _wallCheckSize.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209041788893121400, guid: d541b440ece4e984e801aa2f9d3bdc58, type: 3}
+      propertyPath: _wallCheckSize.y
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3209041788893121400, guid: d541b440ece4e984e801aa2f9d3bdc58, type: 3}
       propertyPath: _groundCheckSize.x
       value: 0.2
