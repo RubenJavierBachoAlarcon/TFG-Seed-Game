@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class TutorialTrigger : MonoBehaviour
 {
@@ -11,19 +12,48 @@ public class TutorialTrigger : MonoBehaviour
     private bool actionCompleted = false;
     private float actionTimer = 0f;
     public float movementActionDuration = 1f; // Duración de la acción en segundos
-    private string[] strings = new string[]
+
+    private string[] strings;
+
+    private string[] keyboardAndMouseStrings = new string[]
+{
+    "Usa WASD para moverte",
+    "Presiona Espacio para saltar",
+    "Cuando estés contra una pared, usa Espacio para realizar un salto de pared",
+    "Presiona Shift para realizar un desplazamiento rápido"
+};
+
+    private string[] gamepadStrings = new string[]
     {
-        "Usa WASD para moverte",
-        "Presiona Espacio para saltar",
-        "Cuando estés contra una pared, usa Espacio para realizar un salto de pared",
-        "Presiona Shift para realizar un desplazamiento rápido"
+    "Usa el joystick izquierdo para moverte",
+    "Presiona A para saltar",
+    "Cuando estés contra una pared, presiona A para realizar un salto de pared",
+    "Presiona B para realizar un desplazamiento rápido"
     };
+
     private int currentTutorialIndex = 0;
 
     public void startText()
     {
         tutorialText.text = strings[0];
         StartCoroutine(FadeTextIn());
+    }
+
+    private void Awake()
+    {
+        switch (GetActiveControlScheme())
+        {
+            case "Keyboard and Mouse":
+                strings = keyboardAndMouseStrings;
+                break;
+            case "Gamepad":
+                strings = gamepadStrings;
+                break;
+            default:
+                Debug.LogWarning("Control scheme not recognized, defaulting to keyboard and mouse tutorial strings.");
+                strings = keyboardAndMouseStrings;
+                break;
+        }
     }
 
     private void Update()
@@ -42,6 +72,22 @@ public class TutorialTrigger : MonoBehaviour
             case 3:
                 CheckDashCondition();
                 break;
+        }
+    }
+
+    private string GetActiveControlScheme()
+    {
+        if (Keyboard.current != null && Mouse.current != null)
+        {
+            return "Keyboard and Mouse";
+        }
+        else if (Gamepad.current != null)
+        {
+            return "Gamepad";
+        }
+        else
+        {
+            return "Unknown";
         }
     }
 

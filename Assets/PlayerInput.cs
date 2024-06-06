@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using static Cinemachine.DocumentationSortingAttribute;
 
 public class PlayerInput : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerInput : MonoBehaviour
     public Vector2 moveInput;
     public string level;
     private PauseMenu pauseMenu;
+    public GameObject pauseButton;
 
     private void Start()
     {

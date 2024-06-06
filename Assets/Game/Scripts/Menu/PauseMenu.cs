@@ -103,7 +103,6 @@ public class PauseMenu : MonoBehaviour
     {
         if (!isGameOver)
         {
-            playerInput.SwitchCurrentActionMap("Gameover");
             isGameOver = true;
             isPaused = true;
             
@@ -129,6 +128,12 @@ public class PauseMenu : MonoBehaviour
             timer += Time.unscaledDeltaTime * 2; // 2 es la velocidad de la animación
             GameOverPanel.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, timer);
             yield return null;
+        }
+
+        GameObject nextLevelButton = GameOverPanel.transform.Find("Restart").gameObject;
+        if (nextLevelButton != null)
+        {
+            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(nextLevelButton);
         }
     }
 }

@@ -17,6 +17,8 @@ public class SeleccionNiveles : MonoBehaviour
 
     private MusicScript musicScript;
 
+    private bool isLevelLoading = false;
+
     void Start()
     {
         musicScript = FindObjectOfType<MusicScript>();
@@ -65,48 +67,80 @@ public class SeleccionNiveles : MonoBehaviour
 
     public void Nivel1()
     {
-        FadeManager.Instance.FadeToScene("Nivel 1 - Cuevas");
-        musicScript.StartFade();
+        if (!isLevelLoading)
+        {
+            isLevelLoading = true;
+            FadeManager.Instance.FadeToScene("Nivel 1 - Cuevas");
+            musicScript.StartFade();
+        }
     }
 
     public void Nivel2()
     {
-        FadeManager.Instance.FadeToScene("Nivel 2 - Cuevas");
-        musicScript.StartFade();
+        if (!isLevelLoading)
+        {
+            isLevelLoading = true;
+            FadeManager.Instance.FadeToScene("Nivel 2 - Cuevas");
+            musicScript.StartFade();
+        }
     }
 
     public void Nivel3()
     {
-        FadeManager.Instance.FadeToScene("Nivel 3 - Cuevas");
-        musicScript.StartFade();
+        if (!isLevelLoading)
+        {
+            isLevelLoading = true;
+            FadeManager.Instance.FadeToScene("Nivel 3 - Cuevas");
+            musicScript.StartFade();
+        }
     }
 
     public void Nivel4()
     {
-        FadeManager.Instance.FadeToScene("Nivel 1 - Bosque");
-        musicScript.StartFade();
+        if (!isLevelLoading)
+        {
+            isLevelLoading = true;
+            FadeManager.Instance.FadeToScene("Nivel 1 - Bosque");
+            musicScript.StartFade();
+        }
     }
 
     public void Nivel5()
     {
-        FadeManager.Instance.FadeToScene("Nivel 2 - Bosque");
-        musicScript.StartFade();
+        if (!isLevelLoading)
+        {
+            isLevelLoading = true;
+            FadeManager.Instance.FadeToScene("Nivel 2 - Bosque");
+            musicScript.StartFade();
+        }
     }
 
     public void Nivel6()
     {
-        FadeManager.Instance.FadeToScene("Nivel 1 - Montaña");
-        musicScript.StartFade();
+        if (!isLevelLoading)
+        {
+            isLevelLoading = true;
+            FadeManager.Instance.FadeToScene("Nivel 1 - Montaña");
+            musicScript.StartFade();
+        }
     }
 
     public void Nivel7()
     {
-        FadeManager.Instance.FadeToScene("Nivel 2 - Montaña");
-        musicScript.StartFade();
+        if (!isLevelLoading)
+        {
+            isLevelLoading = true;
+            FadeManager.Instance.FadeToScene("Nivel 2 - Montaña");
+            musicScript.StartFade();
+        }
     }
 
     public void Menu()
     {
-        FadeManager.Instance.FadeToScene("Menu");
+        if (!isLevelLoading)
+        {
+            isLevelLoading = true;
+            FadeManager.Instance.FadeToScene("Menu");
+        }
     }
 }

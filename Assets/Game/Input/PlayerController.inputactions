@@ -297,51 +297,6 @@
                     "isPartOfComposite": false
                 }
             ]
-        },
-        {
-            "name": "Menu",
-            "id": "ffe72e38-9a79-476e-8860-6e294da3f72b",
-            "actions": [
-                {
-                    "name": "Confirm",
-                    "type": "Button",
-                    "id": "41289efb-7696-4d79-a1a7-420ed17f63a0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "543f50d8-4160-41bd-93e2-c187cc280b36",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Confirm",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "92d986ba-2de8-4191-96a1-8f7922aa72ee",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Confirm",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "GameOver",
-            "id": "a9b41326-064d-407a-b323-75af6f90b259",
-            "actions": [],
-            "bindings": []
         }
     ],
     "controlSchemes": []

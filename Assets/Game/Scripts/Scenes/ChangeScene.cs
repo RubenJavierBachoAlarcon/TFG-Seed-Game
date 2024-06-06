@@ -48,8 +48,6 @@ public class ChangeScene : MonoBehaviour
 
     IEnumerator ShowFinalMenuPanel()
     {
-        playerInput.SwitchCurrentActionMap("Menu");
-
         FinalMenuPanel.SetActive(true);
         StartCoroutine(UpdateScore());
         FinalMenuPanel.transform.localScale = Vector3.zero;
@@ -59,6 +57,12 @@ public class ChangeScene : MonoBehaviour
             timer += Time.deltaTime * 2; // 2 es la velocidad de la animaci�n
             FinalMenuPanel.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, timer);
             yield return null;
+        }
+
+        GameObject nextLevelButton = FinalMenuPanel.transform.Find("Next Level").gameObject;
+        if (nextLevelButton != null)
+        {
+            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(nextLevelButton);
         }
     }
 
